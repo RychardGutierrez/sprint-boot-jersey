@@ -3,20 +3,17 @@ package com.jalasoft.evaluation.evaluationtest.controllers;
 import com.jalasoft.evaluation.evaluationtest.dtos.EvaluationDto;
 import com.jalasoft.evaluation.evaluationtest.services.EvaluationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.net.URISyntaxException;
 import java.util.List;
 
-@XmlAccessorType(XmlAccessType.NONE)
-@XmlRootElement(name = "evaluation")
+@Component
 @Path("/evaluation")
 public class EvaluationController {
 
