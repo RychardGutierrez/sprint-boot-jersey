@@ -19,7 +19,7 @@ import java.util.Collections;
 import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
-public class EvaluationTest {
+public class EvaluationServiceTest {
     @InjectMocks
     EvaluationServiceImpl evaluationService;
 
