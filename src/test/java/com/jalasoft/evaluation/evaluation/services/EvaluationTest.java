@@ -40,7 +40,6 @@ public class EvaluationTest {
         evaluationTest.setDescription("Java Level2 evaluation - solving exercises");
         evaluationTest.setUser("Juan Pablo");
         evaluationTest.setScore(70);
-
         EvaluationDto evaluationDto = new EvaluationDto();
         evaluationDto.setTitle("Evaluation practice Java I");
         evaluationDto.setDescription("Java Level2 evaluation - solving exercises");
@@ -49,12 +48,10 @@ public class EvaluationTest {
 
         Mockito.when(evaluationDtoMapper.mapToEvaluacionDto(evaluationTest))
                 .thenReturn(evaluationDto);
-
         Mockito.when(crudRepository.getAll())
                 .thenReturn(Collections.singletonList(evaluationTest));
 
         List<EvaluationDto> result = evaluationService.getEvaluation();
-
         Assert.assertEquals(evaluationDto, result.stream().findFirst().get());
 
     }
@@ -66,6 +63,7 @@ public class EvaluationTest {
 
         boolean result = evaluationService.isActiveEndPoint();
         boolean expected = true;
+
         Assert.assertEquals(expected, result);
     }
 }

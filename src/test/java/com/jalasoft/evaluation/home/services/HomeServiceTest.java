@@ -42,7 +42,6 @@ public class HomeServiceTest {
         messageWelcome.setTitle("Home Test");
         messageWelcome.setDescription("This section is Home - Test");
         messageWelcome.setMessageToUser("Welcome! Test :)");
-
         HomeDto messageWelcomeDto = new HomeDto();
         messageWelcomeDto.setTitle("Home Test");
         messageWelcomeDto.setDescription("This section is Home - Test");
@@ -50,7 +49,6 @@ public class HomeServiceTest {
 
         Mockito.when(homeDtoMapper.mapToHomeDto(messageWelcome))
                 .thenReturn(messageWelcomeDto);
-
         Mockito.when(crudRepository.getAll())
                 .thenReturn(Collections.singletonList(messageWelcome));
 
@@ -65,6 +63,7 @@ public class HomeServiceTest {
 
         String result = homeService.getProfile();
         String expected = "Now we are in the profile: DEV";
+
         Assert.assertEquals(expected, result);
     }
 }
